@@ -150,7 +150,7 @@ Style/FrozenStringLiteralComment:
   Enabled: true
 
 Style/StringLiterals:
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
 
 Style/NumericLiterals:
   Enabled: false

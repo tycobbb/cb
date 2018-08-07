@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root(to: 'game#show')
+  scope module: 'web' do
+    root(to: 'game#show')
+  end
 end
