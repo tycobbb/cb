@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 watched_paths = %w[
   .ruby-version
   .rbenv-vars

@@ -1,5 +1,7 @@
-# Load the Rails application.
+# frozen_string_literal: true
+
+# load the rails application.
 require_relative 'application'
 
-# Initialize the Rails application.
+# initialize the rails application.
 Rails.application.initialize!
