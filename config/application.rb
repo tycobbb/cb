@@ -8,13 +8,11 @@ Bundler.require(*Rails.groups)
 
 module CardBuilder
   class Application < Rails::Application
-    config.load_defaults 5.2
+    config.load_defaults(5.2)
+    config.active_record.schema_format = :sql
 
     config.eager_load_paths += %w[
-      core
-      core/domain
-      core/domain/support
-      core/services
+      app/core/support
     ].map { |p| config.root.join(p) }
   end
 end
