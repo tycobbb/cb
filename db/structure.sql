@@ -112,7 +112,8 @@ ALTER SEQUENCE public.session_turns_id_seq OWNED BY public.session_turns.id;
 
 CREATE TABLE public.sessions (
     id bigint NOT NULL,
-    game_id integer NOT NULL
+    game_id integer NOT NULL,
+    state integer DEFAULT 0 NOT NULL
 );
 
 
@@ -219,6 +220,7 @@ SET search_path TO "$user", public;
 INSERT INTO "schema_migrations" (version) VALUES
 ('20180810032018'),
 ('20180810033633'),
-('20180812180916');
+('20180812180916'),
+('20180812190406');
 
 

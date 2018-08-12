@@ -6,12 +6,16 @@ describe Game::Repo do
     described_class.new
   end
 
-  it 'finds the current game' do
-    game = Game.create
-    expect(subject.current).to eq(game)
+  describe '#current' do
+    it 'finds the current game' do
+      game = Game.create
+      expect(subject.current).to eq(game)
+    end
   end
 
-  it 'creates a new game' do
-    expect { subject.create }.to change(Game, :count).by(1)
+  describe '#create' do
+    it 'creates a new game' do
+      expect { subject.create }.to change(Game, :count).by(1)
+    end
   end
 end
