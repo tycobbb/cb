@@ -2,6 +2,6 @@
 
 Rails.application.routes.draw do
   scope module: 'web' do
-    root(to: 'game#show')
+    root(to: 'sessions#show')
   end
 end

@@ -13,6 +13,13 @@ module CardBuilder
 
     config.eager_load_paths += %w[
       app/core/support
+      app/core/actions
+      app/core/actions/support
+      app/core/domain
+      app/core/domain/support
+      app/core/persistence
+      app/core/persistence/support
+      app/games/support
     ].map { |p| config.root.join(p) }
   end
 end

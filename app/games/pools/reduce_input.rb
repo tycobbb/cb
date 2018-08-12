@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 module Pools
-  class Setup
+  class ReduceInput
     include Callable
 
-    def initialize(game)
-      @game = game
+    def initialize(state, input)
+      @state = state
+      @input = input
     end
 
     def call
@@ -13,6 +14,6 @@ module Pools
 
     private
 
-    attr_reader :game
+    attr_reader :state, :input
   end
 end

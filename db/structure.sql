@@ -76,10 +76,84 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: session_turns; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.session_turns (
+    id bigint NOT NULL,
+    session_id integer NOT NULL,
+    state json NOT NULL,
+    input json
+);
+
+
+--
+-- Name: session_turns_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.session_turns_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: session_turns_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.session_turns_id_seq OWNED BY public.session_turns.id;
+
+
+--
+-- Name: sessions; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sessions (
+    id bigint NOT NULL,
+    game_id integer NOT NULL
+);
+
+
+--
+-- Name: sessions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.sessions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sessions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.sessions_id_seq OWNED BY public.sessions.id;
+
+
+--
 -- Name: games id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.games ALTER COLUMN id SET DEFAULT nextval('public.games_id_seq'::regclass);
+
+
+--
+-- Name: session_turns id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.session_turns ALTER COLUMN id SET DEFAULT nextval('public.session_turns_id_seq'::regclass);
+
+
+--
+-- Name: sessions id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sessions ALTER COLUMN id SET DEFAULT nextval('public.sessions_id_seq'::regclass);
 
 
 --
@@ -107,12 +181,44 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
+-- Name: session_turns session_turns_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.session_turns
+    ADD CONSTRAINT session_turns_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sessions sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sessions
+    ADD CONSTRAINT sessions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_session_turns_on_session_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_session_turns_on_session_id ON public.session_turns USING btree (session_id);
+
+
+--
+-- Name: index_sessions_on_game_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_sessions_on_game_id ON public.sessions USING btree (game_id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
-('20180810032018');
+('20180810032018'),
+('20180810033633'),
+('20180812180916');
 
 
