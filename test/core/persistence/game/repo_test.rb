@@ -5,8 +5,7 @@ describe Game::Repo do
   describe '#current' do
     it 'finds the current game' do
       subject = Game::Repo.new
-      game = Game.create
-      _(subject.current).must_equal(game)
+      _(subject.current).must_equal(games(:current))
     end
   end
 

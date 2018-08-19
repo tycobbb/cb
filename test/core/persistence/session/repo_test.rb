@@ -5,8 +5,7 @@ describe Session::Repo do
   describe '#current' do
     it 'finds the current session' do
       subject = Session::Repo.new
-      session = Session.create(game: Game.create)
-      _(subject.current).must_be(session)
+      _(subject.current).must_be(sessions(:current))
     end
   end
 
