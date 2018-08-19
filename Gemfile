@@ -21,13 +21,11 @@ end
 
 group :development, :test do
   gem 'awesome_print'
-  # gem 'database_cleaner'
   gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
-  gem 'rspec-rails'
   gem 'rubocop'
 end

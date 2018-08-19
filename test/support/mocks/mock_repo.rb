@@ -6,7 +6,7 @@ class MockRepo
   end
 
   # contract
-  def instance(id, attrs)
+  def instance(_id, _attrs)
     raise NotImplementedError, 'subclasses of `MockRepo` must implement `instance`'
   end
 

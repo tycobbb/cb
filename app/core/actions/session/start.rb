@@ -2,8 +2,8 @@
 class Session
   class Start
     def initialize(
-      games:    Game::Repo.new,
-      sessions: Session::Repo.new
+      games = Game::Repo.new,
+      sessions = Session::Repo.new
     )
       @games    = games
       @sessions = sessions
