@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require 'session'
-require_relative '../mock_repo'
+require "session"
+require_relative "../mock_repo"
 
 class Session
   class MockRepo < ::MockRepo

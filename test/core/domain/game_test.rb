@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'support/helper'
+require "support/helper"
 
 describe Game do
   it "produces the game's initial state" do

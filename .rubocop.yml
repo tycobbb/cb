@@ -44,7 +44,7 @@ Style/FrozenStringLiteralComment:
   EnforcedStyle: when_needed
 
 Style/StringLiterals:
-  EnforcedStyle: single_quotes
+  EnforcedStyle: double_quotes
 
 Style/NumericLiterals:
   Enabled: false

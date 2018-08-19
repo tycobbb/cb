@@ -8,7 +8,7 @@ module Pools
     end
 
     def call
-      '{}'
+      "{}"
     end
 
     private

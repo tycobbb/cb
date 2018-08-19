@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require_relative 'boot'
-require 'rails/all'
+require_relative "boot"
+require "rails/all"
 
 # require the gems listed in gemfile, including any gems
 # you've limited to :test, :development, or :production.

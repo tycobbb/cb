@@ -1,6 +1,6 @@
-# # frozen_string_literal: true
-require 'game'
-require_relative '../mock_repo'
+# frozen_string_literal: true
+require "game"
+require_relative "../mock_repo"
 
 class Game
   class MockRepo < ::MockRepo

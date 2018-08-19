@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-require 'support/helper'
+require "support/helper"
 
 describe Session do
-  it 'sets up the session\'s initial state and starts it' do
+  it "sets up the session's initial state and starts it" do
     subject = Session.new(game: Game.new)
     subject.start
 

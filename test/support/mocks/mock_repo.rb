@@ -7,7 +7,7 @@ class MockRepo
 
   # contract
   def instance(_id, _attrs)
-    raise NotImplementedError, 'subclasses of `MockRepo` must implement `instance`'
+    raise NotImplementedError, "subclasses of `MockRepo` must implement `instance`"
   end
 
   # crud

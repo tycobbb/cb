@@ -1,16 +1,16 @@
 # frozen_string_literal: true
-require 'support/helper'
+require "support/helper"
 
 describe Session::Repo do
-  describe '#current' do
-    it 'finds the current session' do
+  describe "#current" do
+    it "finds the current session" do
       subject = Session::Repo.new
       _(subject.current).must_be(sessions(:current))
     end
   end
 
-  describe '#create' do
-    it 'creates a new session with an initial turn' do
+  describe "#create" do
+    it "creates a new session with an initial turn" do
       subject = Session::Repo.new
 
       session_count = Session.count
