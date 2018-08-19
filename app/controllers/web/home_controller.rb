@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Web
-  class SessionsController < ApplicationController
+  class HomeController < ApplicationController
     def show; end
   end
 end
