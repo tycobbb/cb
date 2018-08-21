@@ -19,8 +19,10 @@ start/wds:
 ## resets the dev database
 db/reset:
 	$(rbin)/rails db:reset
+db/migrate:
+	$(rbin)/rails db:migrate
 
-.PHONY: db/reset
+.PHONY: db/reset db/migrate
 
 # -- test --
 ## runs all the tests

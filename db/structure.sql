@@ -39,6 +39,37 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
+-- Name: game_cards; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.game_cards (
+    id bigint NOT NULL,
+    game_id integer NOT NULL,
+    name character varying NOT NULL,
+    text character varying NOT NULL
+);
+
+
+--
+-- Name: game_cards_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.game_cards_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: game_cards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.game_cards_id_seq OWNED BY public.game_cards.id;
+
+
+--
 -- Name: games; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -137,6 +168,13 @@ ALTER SEQUENCE public.sessions_id_seq OWNED BY public.sessions.id;
 
 
 --
+-- Name: game_cards id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.game_cards ALTER COLUMN id SET DEFAULT nextval('public.game_cards_id_seq'::regclass);
+
+
+--
 -- Name: games id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -163,6 +201,14 @@ ALTER TABLE ONLY public.sessions ALTER COLUMN id SET DEFAULT nextval('public.ses
 
 ALTER TABLE ONLY public.ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: game_cards game_cards_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.game_cards
+    ADD CONSTRAINT game_cards_pkey PRIMARY KEY (id);
 
 
 --
@@ -198,6 +244,13 @@ ALTER TABLE ONLY public.sessions
 
 
 --
+-- Name: index_game_cards_on_game_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_game_cards_on_game_id ON public.game_cards USING btree (game_id);
+
+
+--
 -- Name: index_session_turns_on_session_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -221,6 +274,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180810032018'),
 ('20180810033633'),
 ('20180812180916'),
-('20180812190406');
+('20180812190406'),
+('20180819005517');
 
 

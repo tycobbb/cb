@@ -15,6 +15,7 @@
     "no-empty": false,
     "no-empty-interface": false,
     "no-shadowed-variable": false,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
     "object-literal-sort-keys": false,
     "only-arrow-functions": [true, "allow-named-functions"],
     "ordered-imports": false,

@@ -10,7 +10,9 @@ class Session
     end
 
     def call
-      sessions.create(game: games.current)
+      sessions.create(
+        game: games.current
+      )
     end
 
     private

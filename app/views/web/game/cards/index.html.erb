@@ -1,0 +1,15 @@
+<section>
+  <% if @cards.empty? %>
+    no cards.
+  <% else %>
+    <ul>
+      <% @cards.each do |card| %>
+        <li>
+          <%= card.name %>
+          <%= card.text %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<section>
+<%= link_to("New Card", new_game_card_path) %>

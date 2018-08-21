@@ -1,7 +1,5 @@
-import { h, Component } from 'preact'
+import { h } from 'preact'
 
-export class App extends Component<{}, {}> {
-  render (props, state) {
-    return <h1>hello, world</h1>
-  }
-}
+export const App = (_props) => (
+  <h1>hello, world</h1>
+)

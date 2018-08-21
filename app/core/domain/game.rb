@@ -8,6 +8,14 @@ class Game < Entity
     setup.call(self)
   end
 
+  # card
+  has_many :cards
+
+  def add_card(params)
+    cards.build(params)
+    self
+  end
+
   private
 
   def setup
