@@ -16,9 +16,7 @@ class Session
       session
     end
 
-    protected
-
-    def instance(_id, attrs)
+    protected def instance(_id, attrs)
       Session.new(attrs)
     end
   end

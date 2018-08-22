@@ -40,6 +40,9 @@ Layout/EmptyLineAfterMagicComment:
 Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
 
+Style/AccessModifierDeclarations:
+  EnforcedStyle: inline
+
 Style/FrozenStringLiteralComment:
   EnforcedStyle: when_needed
 

@@ -1,5 +1,8 @@
-<% if flash[:notice].present? %>
-  <div class="flash">
-    <%= flash[:notice] %>
-  </div>
+<% wrapper = Flash.deserialize(flash[:wrapper]) %>
+<% if wrapper.present? %>
+  <ul class="Flash <%= wrapper.alert? && 'Flash--alert' %>">
+    <% wrapper.messages.each do |message| %>
+      <li class="Flash-message"><%= message %></li>
+    <% end %>
+  </ul>
 <% end %>

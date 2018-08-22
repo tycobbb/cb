@@ -8,7 +8,8 @@ Rails.application.routes.draw do
       resources :cards, only: [
         :index,
         :new,
-        :create
+        :create,
+        :show
       ]
     end
   end

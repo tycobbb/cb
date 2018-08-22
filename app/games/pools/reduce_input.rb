@@ -2,6 +2,7 @@
 module Pools
   class ReduceInput
     include Callable
+    private_reader :state, :input
 
     def initialize(state, input)
       @state = state
@@ -11,9 +12,5 @@ module Pools
     def call
       "{}"
     end
-
-    private
-
-    attr_reader :state, :input
   end
 end

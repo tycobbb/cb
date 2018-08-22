@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 class MockRepo
+  private_reader :id, :data
+
   def initialize
     @id = 0
     @data = {}
   end
 
   # contract
-  def instance(_id, _attrs)
+  protected def instance(_id, _attrs)
     raise NotImplementedError, "subclasses of `MockRepo` must implement `instance`"
   end
 
@@ -23,13 +25,9 @@ class MockRepo
     result
   end
 
-  private
-
-  def next_id
+  private def next_id
     result = id
     @id += 1
     result
   end
-
-  attr_reader :id, :data
 end

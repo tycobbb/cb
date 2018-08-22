@@ -10,14 +10,18 @@ module Web::Game
     end
 
     def create
-      ::Game::AddCard.new.call(card_params)
-      flash[:notice] = "Added card."
-      redirect_to(game_cards_path)
+      @card = ::Game::AddCard.new.call(card_params)
+
+      if @card.errors.blank?
+        flash[:wrapper] = Flash.notice("Added card.")
+        redirect_to(game_cards_path)
+      else
+        flash.now[:wrapper] = Flash.alert(@card.errors)
+        render :new
+      end
     end
 
-    private
-
-    def card_params
+    private def card_params
       params.require(:game_card).permit(
         :name,
         :text

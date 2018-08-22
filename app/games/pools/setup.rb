@@ -2,6 +2,7 @@
 module Pools
   class Setup
     include Callable
+    private_reader :game
 
     def initialize(game)
       @game = game
@@ -24,9 +25,5 @@ module Pools
         }
       })
     end
-
-    private
-
-    attr_reader :game
   end
 end

@@ -14,9 +14,7 @@ class Game
       build
     end
 
-    protected
-
-    def instance(_id, attrs)
+    protected def instance(_id, attrs)
       Game.new(attrs)
     end
   end

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 class Session
   class Start
+    private_reader :games, :sessions
+
     def initialize(
       games = Game::Repo.new,
       sessions = Session::Repo.new
@@ -14,9 +16,5 @@ class Session
         game: games.current
       )
     end
-
-    private
-
-    attr_reader :games, :sessions
   end
 end
