@@ -13,10 +13,10 @@ module Web::Game
       @card = ::Game::AddCard.new.call(card_params)
 
       if @card.errors.blank?
-        flash[:wrapper] = Flash.notice("Added card.")
+        flash[:wrapper] = ::Web::Flash.notice("Added card.")
         redirect_to(game_cards_path)
       else
-        flash.now[:wrapper] = Flash.alert(@card.errors)
+        @errors = @card.errors.messages
         render :new
       end
     end

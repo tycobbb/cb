@@ -1,4 +1,4 @@
-<% wrapper = Flash.deserialize(flash[:wrapper]) %>
+<% wrapper = ::Web::Flash.deserialize(flash[:wrapper]) %>
 <% if wrapper.present? %>
   <ul class="Flash <%= wrapper.alert? && 'Flash--alert' %>">
     <% wrapper.messages.each do |message| %>

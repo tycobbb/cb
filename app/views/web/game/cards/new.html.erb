@@ -1,9 +1,6 @@
-<%= form_for @card do |f| %>
-  <%= f.label(:name) %>
+<%= form_for(@card) do |f| %>
   <%= f.text_field(:name) %>
-  <%= f.label(:text) %>
   <%= f.text_field(:text) %>
-  <%= f.label(:image) %>
   <%= f.file_field(:image) %>
   <%= f.submit %>
 <% end %>
