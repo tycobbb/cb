@@ -75,3 +75,6 @@ Naming/PredicateName:
 
 Naming/AccessorMethodName:
   Enabled: false
+
+Naming/UncommunicativeMethodParamName:
+  Enabled: false

@@ -1,6 +1,13 @@
 <%= form_for(@card) do |f| %>
-  <%= f.text_field(:name) %>
-  <%= f.text_field(:text) %>
-  <%= f.file_field(:image) %>
+  <%= f.field(:name) do |klass| %>
+    <%= f.text_field(:name, class: klass) %>
+  <% end %>
+  <%= f.field(:text) do |klass| %>
+    <%= f.text_field(:text, class: klass) %>
+  <% end %>
+  <%= f.field(:image) do |klass| %>
+    <%= f.file_field(:image, class: klass) %>
+    <%= field_image_preview(@card.image) %>
+  <% end %>
   <%= f.submit %>
 <% end %>

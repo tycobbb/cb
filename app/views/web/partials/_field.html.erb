@@ -1,7 +1,0 @@
-<div class='Field'>
-  <%= f.label(attr, class: 'Field-label') %>
-  <%= yield('Field-input') %>
-  <% if @errors&.[](attr).present? %>
-    <div class='Field-error'><%= @errors[attr].join(",") %></div>
-  <% end %>
-</div>
