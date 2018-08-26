@@ -19,9 +19,8 @@
     "object-literal-sort-keys": false,
     "only-arrow-functions": [true, "allow-named-functions"],
     "ordered-imports": false,
-    "quotemark": [true, "single", "avoid-escape"],
+    "quotemark": [true, "double", "avoid-escape"],
     "semicolon": [true, "never"],
-    "space-before-function-paren": [true, "always"],
     "trailing-comma": [true, { "multiline": "never", "singleline": "never" }],
     "variable-name": false
   },

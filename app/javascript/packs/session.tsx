@@ -1,5 +1,5 @@
-import { h, render } from 'preact'
-import { App } from '../app'
+import { h, render } from "preact"
+import { Session } from "../app/session"
 
-const root = document.getElementById('root')
-root && render(<App />, root)
+const root = document.getElementById("root")
+root && render(<Session />, root)

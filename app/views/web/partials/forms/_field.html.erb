@@ -1,7 +1,9 @@
-<div class='Field'>
-  <%= f.label(name, class: 'Field-label') %>
-  <%= yield('Field-input') %>
-  <% if @errors&.[](name).present? %>
-    <div class='Field-error'><%= @errors[name].join(",") %></div>
+<%= content_tag(:div, with_class!(options, "Field")) do %>
+  <%= f.label(name, class: "Field-label") %>
+  <%= yield("Field-input") %>
+  <% if errors.present? %>
+    <div class="Field-error">
+      <%= errors.join(",") %>
+    </div>
   <% end %>
-</div>
+<% end %>

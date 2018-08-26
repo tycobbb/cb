@@ -53,6 +53,30 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@stimulus/core@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@stimulus/core/-/core-1.1.0.tgz#0fe7f5bf555aa2a31b4576f2b3389fd192a27138"
+  dependencies:
+    "@stimulus/mutation-observers" "^1.1.0"
+
+"@stimulus/multimap@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@stimulus/multimap/-/multimap-1.1.0.tgz#f373ff72feab4218b2a9ae00866acc47d5032f5e"
+
+"@stimulus/mutation-observers@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@stimulus/mutation-observers/-/mutation-observers-1.1.0.tgz#8744d8b37302baeffcdd9123021c55084fb82beb"
+  dependencies:
+    "@stimulus/multimap" "^1.1.0"
+
+"@stimulus/webpack-helpers@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@stimulus/webpack-helpers/-/webpack-helpers-1.1.0.tgz#17f00ea6eaa38b490ba84fec6f6c436c604a4a85"
+
+"@types/webpack-env@^1.13.6":
+  version "1.13.6"
+  resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.6.tgz#128d1685a7c34d31ed17010fc87d6a12c1de6976"
+
 "@webassemblyjs/ast@1.5.13":
   version "1.5.13"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.5.13.tgz#81155a570bd5803a30ec31436bc2c9c0ede38f25"
@@ -6472,6 +6496,13 @@ stdout-stream@^1.4.0:
   resolved "https://registry.yarnpkg.com/stdout-stream/-/stdout-stream-1.4.0.tgz#a2c7c8587e54d9427ea9edb3ac3f2cd522df378b"
   dependencies:
     readable-stream "^2.0.1"
+
+stimulus@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-1.1.0.tgz#d313e59bc0085eec5e072a401e0fb2c5fb0a0301"
+  dependencies:
+    "@stimulus/core" "^1.1.0"
+    "@stimulus/webpack-helpers" "^1.1.0"
 
 stream-browserify@^2.0.1:
   version "2.0.1"

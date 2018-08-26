@@ -1,0 +1,15 @@
+<%= f.field(
+  name,
+  data: { controller: "image-field" }
+) do |klass| %>
+  <%= f.file_field(
+    name,
+    class: "Field-input",
+    data: { action: "change->image-field#didPickFile" }
+  ) %>
+  <%= image_attachment_tag(
+    attachment,
+    class: "Field-imagePreview",
+    data: { target: "image-field.preview" }
+  ) %>
+<% end %>

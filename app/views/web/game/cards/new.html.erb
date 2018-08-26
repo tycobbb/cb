@@ -1,3 +1,4 @@
+<%= javascript_pack_tag("cards") %>
 <%= form_for(@card) do |f| %>
   <%= f.field(:name) do |klass| %>
     <%= f.text_field(:name, class: klass) %>
@@ -5,9 +6,6 @@
   <%= f.field(:text) do |klass| %>
     <%= f.text_field(:text, class: klass) %>
   <% end %>
-  <%= f.field(:image) do |klass| %>
-    <%= f.file_field(:image, class: klass) %>
-    <%= field_image_preview(@card.image) %>
-  <% end %>
+  <%= f.image_field(:image, @card.image) %>
   <%= f.submit %>
 <% end %>

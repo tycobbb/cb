@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 module Web
   module FormTagHelpers
-    def field_image_preview(attachment)
+    def image_attachment_tag(attachment, options={})
       image_tag(
         attachment.attached? ? attachment : "",
-        class: "Field-imagePreview"
+        options
       )
     end
   end
