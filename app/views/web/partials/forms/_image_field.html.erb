@@ -10,6 +10,9 @@
   <%= image_attachment_tag(
     attachment,
     class: "Field-imagePreview",
-    data: { target: "image-field.preview" }
+    data: { target: "image-field.preview" },
+    width: 300,
+    height: 500,
+    alt: "#{name.to_s.titlecase} Preview"
   ) %>
 <% end %>
