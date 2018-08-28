@@ -1,8 +1,8 @@
 <% wrapper = ::Web::Flash.deserialize(flash[:wrapper]) %>
 <% if wrapper.present? %>
-  <ul class="Flash <%= wrapper.alert? && 'Flash--alert' %>">
+  <ul class="Page-flash <%= wrapper.alert? && 'Flash--alert' %>">
     <% wrapper.messages.each do |message| %>
-      <li class="Flash-message"><%= message %></li>
+      <li class="Page-flashMessage"><%= message %></li>
     <% end %>
   </ul>
 <% end %>

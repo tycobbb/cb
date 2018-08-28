@@ -1,0 +1,16 @@
+.Page {
+  &-header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: papayawhip;
+  }
+
+  &-headerNav {
+    a + a {
+      margin-left: 10px;
+    }
+  }
+}

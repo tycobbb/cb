@@ -1,0 +1,13 @@
+.Main {
+  padding: 20px;
+
+  &-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  &-header h1 {
+    margin-right: 15px;
+  }
+}

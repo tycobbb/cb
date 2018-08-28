@@ -1,4 +1,8 @@
-<section>
+<header class="Main-header">
+  <h1>Cards</h1>
+  <%= link_to("New Card", new_game_card_path) %>
+</header>
+<article class="Main-content">
   <% if @cards.empty? %>
     no cards.
   <% else %>
@@ -11,5 +15,4 @@
       <% end %>
     </ul>
   <% end %>
-<section>
-<%= link_to("New Card", new_game_card_path) %>
+<article>

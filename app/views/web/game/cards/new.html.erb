@@ -1,11 +1,16 @@
 <%= javascript_pack_tag("cards") %>
-<%= form_for(@card) do |f| %>
-  <%= f.field(:name) do |klass| %>
-    <%= f.text_field(:name, class: klass) %>
+<header class="Main-header">
+  <h1>New Card</h1>
+</header>
+<article class="Main-content">
+  <%= form_for(@card) do |f| %>
+    <%= f.field(:name) do |klass| %>
+      <%= f.text_field(:name, class: klass) %>
+    <% end %>
+    <%= f.field(:text) do |klass| %>
+      <%= f.text_field(:text, class: klass) %>
+    <% end %>
+    <%= f.image_field(:image, @card.image) %>
+    <%= f.submit %>
   <% end %>
-  <%= f.field(:text) do |klass| %>
-    <%= f.text_field(:text, class: klass) %>
-  <% end %>
-  <%= f.image_field(:image, @card.image) %>
-  <%= f.submit %>
-<% end %>
+</article>
