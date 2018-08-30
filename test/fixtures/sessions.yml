@@ -1,3 +1,3 @@
-# the default current session
+# the current session (w/ current game)
 current:
-  game: current
+  game_id: 1

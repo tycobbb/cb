@@ -6,11 +6,12 @@
   <% if @cards.empty? %>
     no cards.
   <% else %>
-    <ul>
+    <ul class="Cards">
       <% @cards.each do |card| %>
-        <li>
-          <%= card.name %>
-          <%= card.text %>
+        <li class="Card">
+          <%= image_attachment_tag(card.image, class: "Card-image") %>
+          <%= link_to(card.name, game_card_path(card), class: "Card-name") %>
+          <p class="Card-text"><%= card.text %></p>
         </li>
       <% end %>
     </ul>

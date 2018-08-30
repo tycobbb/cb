@@ -29,7 +29,7 @@ db/migrate:
 test: test/rails test/js
 ## runs the rails tests
 test/rails:
-	$(rbin)/rspec $(ONLY)
+	$(rbin)/rails test
 ## runs the javascript tests
 test/js:
 	$(jbin)/jest
@@ -40,7 +40,7 @@ test/js/snapshot:
 test/js/watch:
 	$(jbin)/jest --watch
 
-.PHONY: test test/rails test/js test/js/watch
+.PHONY: test test/rails test/js test/js/snapshot test/js/watch
 
 # -- lint --
 jslint = $(jbin)/tslint

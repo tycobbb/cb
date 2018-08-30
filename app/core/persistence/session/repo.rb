@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 class Session
   class Repo
+    include StaticProxy
     private_reader :games
 
-    # queries
     def initialize(games = ::Game::Repo.new)
       @games = games
     end
 
+    # queries
     def current
       games.current.sessions.first
     end

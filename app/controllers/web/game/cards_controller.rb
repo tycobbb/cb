@@ -3,7 +3,7 @@ module Web
   module Game
     class CardsController < ApplicationController
       def index
-        @cards = ::Game::Repo.new.current.cards
+        @cards = ::Game::Repo.current.cards
       end
 
       def new
@@ -20,6 +20,10 @@ module Web
           @errors = @card.errors.messages
           render :new
         end
+      end
+
+      def show
+        @card = ::Game::Card::Repo.find(params[:id])
       end
 
       private def card_params

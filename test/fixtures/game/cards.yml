@@ -1,0 +1,10 @@
+# cards for the current game
+first:
+  game_id: 1
+  name: "First Card"
+  text: "Text for first card."
+
+second:
+  game_id: 1
+  name: "Second Card"
+  text: "Text for the second card."

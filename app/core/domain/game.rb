@@ -5,7 +5,7 @@ class Game < Entity
 
   # setup
   def initial_state
-    setup.call(self)
+    setup.call
   end
 
   private def setup

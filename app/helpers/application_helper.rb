@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 module ApplicationHelper
-  include Web::FormTagHelpers
+  include Web::ImageTagHelpers
   include Web::OptionsHelpers
 end

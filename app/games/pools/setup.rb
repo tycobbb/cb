@@ -2,11 +2,6 @@
 module Pools
   class Setup
     include Callable
-    private_reader :game
-
-    def initialize(game)
-      @game = game
-    end
 
     def call
       JSON.dump({

@@ -1,20 +1,22 @@
 # frozen_string_literal: true
 require "support/helper"
 
-describe Game::Repo do
-  describe "#current" do
-    it "finds the current game" do
-      subject = Game::Repo.new
-      _(subject.current).must_equal(games(:current))
-    end
+class Game::RepoTest < ActiveSupport::TestCase
+  setup do
+    @repo = Game::Repo.new
   end
 
-  describe "#create" do
-    it "creates a new game" do
-      subject = Game::Repo.new
-      game_count = Game.count
-      subject.create
-      _(Game.count).must_equal(game_count + 1)
-    end
+  fixtures :all
+
+  # -- #current
+  test "finds the current game" do
+    assert_equal(@repo.current, games(:current))
+  end
+
+  # -- #create
+  test "creates new games" do
+    initial_count = Game.count
+    @repo.create
+    assert_equal(Game.count, initial_count + 1)
   end
 end

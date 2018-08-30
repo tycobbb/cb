@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 require "support/helper"
 
-describe Session::Start do
-  it "creates and starts a session of the current game" do
+class Session::StartTest < ActiveSupport::TestCase
+  test "creates and starts a session of the current game" do
     games = Game::MockRepo.new
-    game = games.create
-    subject = Session::Start.new(games, Session::MockRepo.new)
+    start = Session::Start.new(games, Session::MockRepo.new)
 
-    actual = subject.call
-    _(actual).must_be(:started?)
-    _(actual.game).must_equal(game)
+    game    = games.create
+    session = start.call
+    assert_predicate(session, :started?)
+    assert_equal(session.game, game)
   end
 end
