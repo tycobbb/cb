@@ -2,7 +2,7 @@
 module Web
   class FormBuilder < ActionView::Helpers::FormBuilder
     # config
-    FORM_PARTIALS_PATH = "web/partials/forms"
+    FORM_PARTIALS_PATH = "partials/forms"
 
     # Renders the wrapper for a field with the given name
     #

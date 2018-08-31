@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require_relative "boot"
+require_relative "load_paths"
 require "rails/all"
 
 # require the gems listed in gemfile, including any gems
@@ -14,15 +15,10 @@ module CardBuilder
     config.active_record.schema_format = :sql
 
     # add any core directories to load paths
-    new_load_paths = Dir.glob(
-      config.root.join("core", "*")
-    )
-
-    # add any support dirs under app/core to load paths
-    new_load_paths += Dir.glob(
-      config.root.join("{app,core}", "**", "{support}")
-    )
-
-    config.eager_load_paths += new_load_paths.uniq
+    config.eager_load_paths += LoadPaths.new
+      .glob("core", "*")
+      .path("games")
+      .glob("{app,core}", "**", "support")
+      .take
   end
 end
