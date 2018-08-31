@@ -1,3 +1,4 @@
+<% errors = @errors&.[](name) %>
 <%= content_tag(:div, with_class!(options, "Field")) do %>
   <%= f.label(name, class: "Field-label") %>
   <%= yield("Field-input") %>

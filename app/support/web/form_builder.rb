@@ -15,7 +15,6 @@ module Web
         layout: partial(:field),
         locals: locals(
           name: name,
-          errors: @errors&.[](name),
           options: options
         ),
         &block
