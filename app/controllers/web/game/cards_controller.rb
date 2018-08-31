@@ -3,7 +3,7 @@ module Web
   module Game
     class CardsController < ApplicationController
       def index
-        @cards = ::Game::Repo.current.cards
+        @cards = ::Game::ShowCards.call
       end
 
       def new
@@ -11,7 +11,7 @@ module Web
       end
 
       def create
-        @card = ::Game::AddCard.new.call(card_params)
+        @card = ::Game::AddCard.call(card_params)
 
         if @card.errors.blank?
           flash[:wrapper] = ::Web::Flash.notice("Added card.")
@@ -23,13 +23,44 @@ module Web
       end
 
       def show
-        @card = ::Game::Card::Repo.find(params[:id])
+        @card = ::Game::ShowCard.call(card_id)
+      end
+
+      def edit
+        @card = ::Game::ShowCard.call(card_id)
+      end
+
+      def update
+        @card = ::Game::EditCard.call(card_id, card_params)
+
+        if @card.errors.blank?
+          flash[:wrapper] = ::Web::Flash.notice("Updated card.")
+          redirect_to(game_card_path(@card))
+        else
+          @errors = @card.errors.messages
+          render :edit
+        end
+      end
+
+      def destroy
+        card = ::Game::RemoveCard.call(card_id)
+
+        if card.errors.blank?
+          flash[:wrapper] = ::Web::Flash.notice("Removed card.")
+          redirect_to(game_cards_path)
+        end
+      end
+
+      # helpers
+      private def card_id
+        params[:id]
       end
 
       private def card_params
         params.require(:game_card).permit(
           :name,
-          :text
+          :text,
+          :image
         )
       end
     end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class Game
-  class AddCard
+  class ShowCard
     include StaticProxy
     private_reader :games
 
@@ -8,11 +8,9 @@ class Game
       @games = games
     end
 
-    def call(params)
+    def call(card_id)
       game = games.current
-      card = game.add_card(params)
-      card.save
-      card
+      game&.cards&.find(card_id)
     end
   end
 end

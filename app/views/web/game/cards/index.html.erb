@@ -1,18 +1,16 @@
 <header class="Main-header">
   <h1>Cards</h1>
-  <%= link_to("New Card", new_game_card_path) %>
+  <menu>
+    <%= link_to("New Card", new_game_card_path) %>
+  </menu>
 </header>
-<article class="Main-content">
+<article class="ListCards">
   <% if @cards.empty? %>
     no cards.
   <% else %>
     <ul class="Cards">
       <% @cards.each do |card| %>
-        <li class="Card">
-          <%= image_attachment_tag(card.image, class: "Card-image") %>
-          <%= link_to(card.name, game_card_path(card), class: "Card-name") %>
-          <p class="Card-text"><%= card.text %></p>
-        </li>
+        <li><%= card_tag(card, is_link: true) %></li>
       <% end %>
     </ul>
   <% end %>

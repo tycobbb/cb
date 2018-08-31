@@ -1,0 +1,11 @@
+<article class="Card">
+  <%= card_image_tag(card) %>
+  <div class="Card-content">
+    <% if is_link %>
+      <%= link_to(card.name, game_card_path(card), class: "Card-name") %>
+    <% else %>
+      <p class="Card-name"><%= card.name %></p>
+    <% end %>
+    <p class="Card-text"><%= card.text %></p>
+  </div>
+</article>

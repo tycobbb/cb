@@ -5,12 +5,7 @@ Rails.application.routes.draw do
     root to: "home#show"
 
     namespace :game do
-      resources :cards, only: [
-        :index,
-        :new,
-        :create,
-        :show
-      ]
+      resources :cards
     end
   end
 end

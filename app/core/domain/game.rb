@@ -18,4 +18,14 @@ class Game < Entity
   def add_card(params)
     cards.build(params)
   end
+
+  def edit_card(card_id, params)
+    card = cards.record(card_id)
+    card.assign_attributes(params)
+    card
+  end
+
+  def remove_card(card_id)
+    cards.remove_record(card_id)
+  end
 end

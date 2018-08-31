@@ -6,19 +6,27 @@ rbin = ./bin
 # location for js binaries
 jbin = ./node_modules/.bin
 
-# -- run --
+# -- run/stop --
 ## starts the app
 start:
 	$(rbin)/rails server
+## starts the webpack-dev-server
 start/wds:
 	$(rbin)/webpack-dev-server
+## stops the app gracefully
+stop:
+	cat ./tmp/pids/server.pid | xargs kill -15
+## kills the app ungracefully
+kill:
+	cat ./tmp/pids/server.pid | xargs kill -9
 
-.PHONY: start
+.PHONY: start start/wds stop
 
 # -- db --
 ## resets the dev database
 db/reset:
 	$(rbin)/rails db:reset
+## migrates the dev database
 db/migrate:
 	$(rbin)/rails db:migrate
 

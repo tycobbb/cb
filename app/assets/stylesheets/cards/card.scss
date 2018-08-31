@@ -1,0 +1,26 @@
+.Card {
+  position: relative;
+  width: min-content;
+
+  &-content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 50%;
+    padding: 20px;
+    background-color: rgba(black, 0.5);
+  }
+
+  &-name {
+    color: white;
+  }
+
+  &-text {
+    margin-top: 20px;
+    color: white;
+  }
+}

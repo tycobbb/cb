@@ -1,6 +1,15 @@
 <header class="Main-header">
   <h1><%= @card.name %></h1>
+  <menu>
+    <%= link_to("Edit", edit_game_card_path(@card)) %>
+    <%= link_to("Delete", @card, :method => :delete, :confirm => "Are you sure?") %>
+  </menu>
 </header>
-<article class="Main-content">
-  <h2><%= @card.text %></h2>
+<article class="ShowCard">
+  <dl>
+    <dt>Text</dt>
+    <dd><%= @card.text %>
+    <dt>Preview</dt>
+    <dd><%= card_tag(@card) %></dd>
+  </dl>
 </article>
