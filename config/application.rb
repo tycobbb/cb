@@ -13,16 +13,16 @@ module CardBuilder
     # schema format
     config.active_record.schema_format = :sql
 
-    # load paths
-    config.eager_load_paths += %w[
-      app/core/support
-      app/core/actions
-      app/core/actions/support
-      app/core/domain
-      app/core/domain/support
-      app/core/persistence
-      app/core/persistence/support
-      app/games/support
-    ].map { |p| config.root.join(p) }
+    # add any core directories to load paths
+    new_load_paths = Dir.glob(
+      config.root.join("core", "*")
+    )
+
+    # add any support dirs under app/core to load paths
+    new_load_paths += Dir.glob(
+      config.root.join("{app,core}", "**", "{support}")
+    )
+
+    config.eager_load_paths += new_load_paths.uniq
   end
 end
