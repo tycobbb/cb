@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class MockRepo
-  private_reader :id, :data
+  iattr :id,   private: true
+  iattr :data, private: true
 
   def initialize
     @id = 0

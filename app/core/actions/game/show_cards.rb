@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class Game
   class ShowCards < ::Action
-    private_reader :games
+    iattr :games, private: true
 
     def initialize(games = Game::Repo.new)
       @games = games

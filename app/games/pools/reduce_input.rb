@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module Pools
   class ReduceInput < ::Service
-    private_reader :state, :input
+    iattr :state, :input, private: true
 
     def initialize(state, input)
       @state = state

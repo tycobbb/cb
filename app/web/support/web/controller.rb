@@ -14,8 +14,10 @@ module Web
     # Scopes the view lookup path to the corresponding module directory.
     #
     # Allows views to live in a directory underneath their root module, e.g.:
+    # ```
     # games       -> /web/game/views/*
     # games/cards -> /web/games/views/cards/*
+    # ```
     def self.local_prefixes
       prefix = controller_path
       prefix = prefix.split("/").insert(1, "views").join("/")

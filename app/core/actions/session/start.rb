@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 class Session
   class Start < ::Action
-    private_reader :games, :sessions
+    iattr :games, private: true
+    iattr :sessions, private: true
 
     def initialize(
       games = Game::Repo.new,

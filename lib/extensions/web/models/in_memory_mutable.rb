@@ -4,10 +4,22 @@ module Extensions
     module Models
       module InMemoryMutable
         module CollectionProxy
+          # Retrieves the record from the collection in-memory if the collection
+          # has already beed loaded. If it its not loaded, it loads it first.
+          #
+          # If the record does not exist in memory, it raises `RecordNotFound`.
+          #
+          # @param id [Id] The id of the record to retrieve.
           def record(id)
             @association.record(id)
           end
 
+          # Removes the record from the collection in-memory. If the collection
+          # is reloaded, the changes will be lost.
+          #
+          # If the record does not exist in memory, it raises `RecordNotFound`.
+          #
+          # @param id [Id] The id of the record to remove.
           def remove_record(id)
             @association.remove_record(id)
           end
