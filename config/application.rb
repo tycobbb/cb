@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require_relative "boot"
-require_relative "load_paths"
+require_relative "support/load_paths"
 require "rails/all"
 
 # require the gems listed in gemfile, including any gems
@@ -16,9 +16,8 @@ module CardBuilder
 
     # add any core directories to load paths
     config.eager_load_paths += LoadPaths.new
-      .glob("core", "*")
-      .path("games")
-      .glob("{app,core}", "**", "support")
+      .glob("app", "core", "*")
+      .glob("app", "**", "support")
       .take
   end
 end

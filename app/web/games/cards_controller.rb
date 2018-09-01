@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 module Games
   class CardsController < Web::Controller
+    helper CardsTags
+
     def index
       @cards = ::Game::ShowCards.call
     end
