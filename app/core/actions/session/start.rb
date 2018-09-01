@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class Session
   class Start < ::Action
-    iattr :games, private: true
+    iattr :games,    private: true
     iattr :sessions, private: true
 
     def initialize(

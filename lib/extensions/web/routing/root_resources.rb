@@ -14,7 +14,7 @@ module Extensions
         # @param name [Symbol] The resource name
         def root_resources(name, *args, **options, &block)
           options[:module] = name
-          options[:controller] = :root
+          options[:controller] = ::Web::Controller::ROOT_NAME
           resources(name, *args, **options, &block)
         end
       end

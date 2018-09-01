@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 module Web
   class Controller < ActionController::Base
+    ROOT_NAME = "root"
+
     # helpers
     helper Web::Helper
 
@@ -19,8 +21,9 @@ module Web
     # games/cards -> /web/games/views/cards/*
     # ```
     def self.local_prefixes
-      prefix = controller_path
-      prefix = prefix.split("/").insert(1, "views").join("/")
+      prefix_parts = controller_path.split("/")
+      prefix_parts.pop if prefix_parts.last == ROOT_NAME
+      prefix = prefix_parts.insert(1, "views").join("/")
       [prefix]
     end
   end

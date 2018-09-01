@@ -78,3 +78,6 @@ Naming/AccessorMethodName:
 
 Naming/UncommunicativeMethodParamName:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

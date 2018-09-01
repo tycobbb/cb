@@ -9,7 +9,15 @@ class Session
 
     # queries
     def current
-      games.current.sessions.first
+      current_sessions.first
+    end
+
+    def current!
+      current_sessions.first!
+    end
+
+    private def current_sessions
+      games.current.sessions
     end
 
     # factory

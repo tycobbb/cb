@@ -142,7 +142,8 @@ ALTER SEQUENCE public.game_cards_id_seq OWNED BY public.game_cards.id;
 --
 
 CREATE TABLE public.games (
-    id bigint NOT NULL
+    id bigint NOT NULL,
+    name character varying NOT NULL
 );
 
 
@@ -395,6 +396,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180812180916'),
 ('20180812190406'),
 ('20180819005517'),
-('20180821024347');
+('20180821024347'),
+('20180901225520');
 
 
