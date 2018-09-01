@@ -9,7 +9,7 @@ class Game
     end
 
     def call
-      game = games.current
+      game = games.current_with_card_images
       game&.cards || []
     end
   end

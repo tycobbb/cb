@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-class Game
+module Games
   module CardsTags
-    COMPONENT_PARTIALS_PATH = "game/cards/partials"
+    COMPONENT_PARTIALS_PATH = "games/views/cards/partials"
 
     def card_tag(card, is_link: false)
       render(partial: partial(:card), locals: {

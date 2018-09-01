@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  root to: "home#show"
+  scope module: :home do
+    root to: "home#show"
+  end
 
-  namespace :game do
+  resources :games, module: :games, only: [] do
     resources :cards
   end
 end

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
-class Game
-  class CardsController < ApplicationController
+module Games
+  class CardsController < Web::Controller
     def index
-      @cards = ShowCards.call
+      @cards = ::Game::ShowCards.call
     end
 
     def new
-      @card = Card.new
+      @card = ::Game::Card.new
     end
 
     def create
-      @card = AddCard.call(card_params)
+      @card = ::Game::AddCard.call(card_params)
 
       if @card.errors.blank?
         flash[:wrapper] = ::Web::Flash.notice("Added card.")
@@ -22,15 +22,15 @@ class Game
     end
 
     def show
-      @card = ShowCard.call(card_id)
+      @card = ::Game::ShowCard.call(card_id)
     end
 
     def edit
-      @card = ShowCard.call(card_id)
+      @card = ::Game::ShowCard.call(card_id)
     end
 
     def update
-      @card = EditCard.call(card_id, card_params)
+      @card = ::Game::EditCard.call(card_id, card_params)
 
       if @card.errors.blank?
         flash[:wrapper] = ::Web::Flash.notice("Updated card.")
@@ -42,7 +42,7 @@ class Game
     end
 
     def destroy
-      card = RemoveCard.call(card_id)
+      card = ::Game::RemoveCard.call(card_id)
 
       if card.errors.blank?
         flash[:wrapper] = ::Web::Flash.notice("Removed card.")

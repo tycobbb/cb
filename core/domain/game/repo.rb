@@ -8,6 +8,10 @@ class Game
       Game.first
     end
 
+    def current_with_card_images
+      Game.first
+    end
+
     # factory
     def create
       Game.create
