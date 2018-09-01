@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  scope module: :home do
-    root to: "home#show"
-  end
+  root "root#show", module: :home
 
-  resources :games, module: :games, only: [] do
+  root_resources :games, only: [] do
     resources :cards
   end
+
+  root_resources :sessions, only: [:new, :create]
 end

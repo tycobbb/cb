@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Home
-  class HomeController < Web::Controller
+  class RootController < Web::Controller
     def show; end
   end
 end
