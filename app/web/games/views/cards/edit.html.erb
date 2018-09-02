@@ -1,7 +1,7 @@
-<%= javascript_pack_tag("cards") %>
 <header class="Main-header">
   <h1>Edit <%= @card.name %></h1>
 </header>
 <article class="EditCard">
   <%= card_form_tag(@card) %>
+  <%= javascript_pack_tag("cards") %>
 </article>
