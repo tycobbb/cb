@@ -5,7 +5,7 @@ class Session
     iattr :sessions, private: true
 
     def initialize(
-      games = Game::Repo.new,
+      games    = Game::Repo.new,
       sessions = Session::Repo.new
     )
       @games    = games

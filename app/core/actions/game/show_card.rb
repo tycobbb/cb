@@ -8,8 +8,8 @@ class Game
     end
 
     def call(card_id)
-      game = games.current
-      game&.cards&.find(card_id)
+      game = games.current_with_cards_and_images
+      game&.cards&.record(card_id)
     end
   end
 end

@@ -6,8 +6,8 @@ class Game
       Game.first
     end
 
-    def current_with_card_images
-      Game.first
+    def current_with_cards_and_images
+      Game.includes(cards: { image_attachment: :blob }).first
     end
 
     # factory
