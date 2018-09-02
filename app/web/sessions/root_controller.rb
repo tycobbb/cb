@@ -29,6 +29,15 @@ module Sessions
       @session = ::Session::Repo.current
     end
 
+    def destroy
+      session = ::Session::End.call
+
+      if session.errors.blank?
+        flash[:wrapper] = ::Web::Flash.notice("Ended session.")
+        redirect_to(new_session_path)
+      end
+    end
+
     # filters
     private def redirect_to_new_session
       redirect_to(new_session_path)

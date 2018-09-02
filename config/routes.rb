@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :cards
   end
 
-  root_resources :sessions, only: [:new, :create, :show]
+  root_resources :sessions, except: [:index, :edit, :update]
 end

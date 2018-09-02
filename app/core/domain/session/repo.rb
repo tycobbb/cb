@@ -17,7 +17,7 @@ class Session
     end
 
     private def current_sessions
-      games.current.sessions
+      games.current.sessions.started
     end
 
     # factory

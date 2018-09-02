@@ -1,6 +1,6 @@
 <header class="Main-header">
   <h1><%= @card.name %></h1>
-  <menu>
+  <menu class="Main-headerMenu">
     <%= link_to("Edit", edit_game_card_path(@card)) %>
     <%= link_to("Delete", @card, :method => :delete, :confirm => "Are you sure?") %>
   </menu>

@@ -7,12 +7,16 @@ class Session < Entity
   enum state: [
     :pending,
     :started,
-    :finished
+    :ended
   ]
 
   def start
     self.state = :started
     add_initial_turn
+  end
+
+  def end
+    self.state = :ended
   end
 
   # turns
