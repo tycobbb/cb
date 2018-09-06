@@ -1,1 +1,1 @@
-export { Session } from "./Session"
+export { View as Session } from "./Session"

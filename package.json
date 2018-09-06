@@ -8,6 +8,7 @@
   "dependencies": {
     "@rails/webpacker": "4.0.0-pre.2",
     "preact": "^8.3.0",
+    "preact-context": "^1.1.0",
     "stimulus": "^1.1.0"
   },
   "devDependencies": {

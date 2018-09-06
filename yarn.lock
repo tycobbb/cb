@@ -5538,6 +5538,10 @@ postcss@^6.0, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.14, 
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
+preact-context@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/preact-context/-/preact-context-1.1.0.tgz#7303caacfea86ed4ffdff8edc945ea73607a41e6"
+
 preact@^8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/preact/-/preact-8.3.0.tgz#eef16418bc351a44015b62c447722132ce5c36eb"
