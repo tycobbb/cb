@@ -10,13 +10,13 @@
     "jsxFactory": "h",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "app/javascript/src/*"
-      ]
+      "@/*":  [ "app/javascript/app/*" ],
+      "@S/*": [ "app/javascript/app/Shared/*" ]
     },
     "types": [
       "webpack-env"
     ],
+    "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
     "strictNullChecks": true,

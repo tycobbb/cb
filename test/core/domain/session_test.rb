@@ -8,6 +8,13 @@ class SessionTest < ActiveSupport::TestCase
     session.start
     assert_predicate(session, :started?)
     assert_equal(session.turns.length, 1)
-    assert_not_nil(session.turns.first.state)
+    assert_not_nil(session.turn_state)
+  end
+
+  # -- #end
+  test "ends the session" do
+    session = Session.new(game: Game.new)
+    session.end
+    assert_predicate(session, :ended?)
   end
 end

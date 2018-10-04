@@ -1,1 +1,1 @@
-import "../app/cards"
+import "@/Cards"

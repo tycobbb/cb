@@ -7,7 +7,7 @@ class Session
       @games = games
     end
 
-    # queries
+    # current
     def current
       current_sessions.first
     end
@@ -16,6 +16,12 @@ class Session
       current_sessions.first!
     end
 
+    # lookups
+    def find_by_id!(id)
+      current_sessions.find_by!(id: id)
+    end
+
+    # helpers
     private def current_sessions
       games.current.sessions.started
     end

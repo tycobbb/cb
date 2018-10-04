@@ -22,6 +22,10 @@ class Session < Entity
   # turns
   has_many :turns
 
+  def turn_state
+    turns.last.state
+  end
+
   private def add_initial_turn
     turn = turns.build
     turn.state = game.initial_state

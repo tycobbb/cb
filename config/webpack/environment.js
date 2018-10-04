@@ -9,7 +9,8 @@ environment.loaders
 environment.config.merge({
   resolve: {
     alias: {
-      '@': resolve(config.source_path, './src'),
+      '@':  resolve(config.source_path, './app'),
+      '@S': resolve(config.source_path, './app/Shared'),
     }
   }
 })

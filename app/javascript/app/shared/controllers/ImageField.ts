@@ -1,5 +1,5 @@
 import { Controller } from "stimulus"
-import { register } from "../application"
+import { app } from "@S/App"
 
 export class ImageField extends Controller {
   static targets = [
@@ -49,4 +49,4 @@ export class ImageField extends Controller {
   }
 }
 
-register("image-field", ImageField)
+app().register("image-field", ImageField)

@@ -1,5 +1,5 @@
 import { h } from "preact"
-import { Card } from "./Card"
+import { Card } from "@/Session/Domain"
 
 interface Props {
   card: Card

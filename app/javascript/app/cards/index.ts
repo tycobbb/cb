@@ -1,1 +1,1 @@
-import "../shared/controllers/ImageField"
+import "@S/Controllers/ImageField"
