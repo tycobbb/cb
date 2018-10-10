@@ -14,10 +14,19 @@ module CardBuilder
     # schema format
     config.active_record.schema_format = :sql
 
-    # add any core directories to load paths
-    config.eager_load_paths += LoadPaths.new
-      .glob("app", "core", "*")
-      .glob("app", "**", "support")
+    # immediately require extensions
+    LoadPaths.new(config.root)
+      .glob("lib", "ext", "**", "*.rb")
+      .require
+
+    # add load paths in layer-order
+    config.eager_load_paths += LoadPaths.new(config.root)
+      .lib("support")
+      .lib("service")
+      .lib("games")
+      .lib("domain")
+      .lib("action")
+      .app("web", "support")
       .take
   end
 end

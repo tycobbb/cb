@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Extensions
+module Ext
   module Web
     module Models
       module InMemoryMutable
@@ -55,7 +55,7 @@ module Extensions
 end
 
 src = ActiveRecord::Associations
-ext = Extensions::Web::Models::InMemoryMutable
+ext = Ext::Web::Models::InMemoryMutable
 
 src::CollectionProxy.include(ext::CollectionProxy)
 src::CollectionAssociation.include(ext::CollectionAssociation)

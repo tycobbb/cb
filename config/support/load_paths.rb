@@ -1,25 +1,46 @@
 # frozen_string_literal: true
 class LoadPaths
+  def initialize(root)
+    @root  = root
+    @paths = []
+  end
+
+  # definition
   def path(*components)
-    paths << join(components)
-    self
+    add_paths([join(components)])
   end
 
   def glob(*components)
-    paths.concat(Dir.glob(join(components)))
-    self
+    add_paths(Dir.glob(join(components)))
   end
 
+  # - specialization
+  def lib(*components)
+    path("lib", *components)
+  end
+
+  def app(*components)
+    path("app", *components)
+  end
+
+  # resolution
   def take
-    paths.uniq
+    @paths.uniq.map(&:to_s)
+  end
+
+  def require
+    take.each do |path|
+      Kernel.send(:require, path)
+    end
   end
 
   # helpers
-  private def paths
-    @paths ||= []
+  private def add_paths(paths)
+    @paths.concat(paths)
+    self
   end
 
   private def join(components)
-    Rails.application.config.root.join(*components)
+    @root.join(*components)
   end
 end

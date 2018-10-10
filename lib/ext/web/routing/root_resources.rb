@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Extensions
+module Ext
   module Web
     module Routing
       module RootResources
@@ -22,4 +22,4 @@ module Extensions
   end
 end
 
-ActionDispatch::Routing::Mapper.include(Extensions::Web::Routing::RootResources)
+ActionDispatch::Routing::Mapper.include(Ext::Web::Routing::RootResources)

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Extensions
+module Ext
   module Web
     module Module
       module AccessControl
@@ -31,4 +31,4 @@ module Extensions
   end
 end
 
-Module.include(Extensions::Web::Module::AccessControl)
+Module.include(Ext::Web::Module::AccessControl)
