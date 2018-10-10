@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Sessions
-  class RootController < ::Web::Controller
+  class Controller < ::Web::Controller
     before_action :redirect_to_current_session, only: :new
 
     # actions

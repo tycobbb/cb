@@ -17,14 +17,13 @@ module Web
     #
     # Allows views to live in a directory underneath their root module, e.g.:
     # ```
-    # games       -> /web/game/views/*
+    # games       -> /web/games/views/*
     # games/cards -> /web/games/views/cards/*
     # ```
     def self.local_prefixes
-      prefix_parts = controller_path.split("/")
-      prefix_parts.pop if prefix_parts.last == ROOT_NAME
-      prefix = prefix_parts.insert(1, "views").join("/")
-      [prefix]
+      path_components = controller_path.split("/").push("views")
+      path = path_components.join("/")
+      [path]
     end
   end
 end

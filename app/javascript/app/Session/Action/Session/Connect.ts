@@ -21,7 +21,7 @@ export class Connect {
 
   // lifecycle
   constructor(
-    channel  = new Channel.Service("Sessions::RootChannel"),
+    channel  = new Channel.Service("Sessions::Channel"),
     sessions = new Session.Repo()
   ) {
     this.channel  = channel
