@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 class LoadPaths
+  class Directories
+    LIB = "lib"
+    APP = "app"
+    WEB = "app/web"
+  end
+
   def initialize(root)
     @root  = root
     @paths = []
@@ -12,15 +18,6 @@ class LoadPaths
 
   def glob(*components)
     add_paths(Dir.glob(join(components)))
-  end
-
-  # - specialization
-  def lib(*components)
-    path("lib", *components)
-  end
-
-  def app(*components)
-    path("app", *components)
   end
 
   # resolution
