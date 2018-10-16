@@ -10,7 +10,7 @@
   <% else %>
     <section class="Cards">
       <% @cards.each do |card| %>
-        <%= card_tag(card, is_link: true) %>
+        <%= Cells::Card.render(card, is_link: true) %>
       <% end %>
     </section>
   <% end %>

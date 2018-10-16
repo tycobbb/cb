@@ -10,6 +10,6 @@
     <dt>Text</dt>
     <dd><%= @card.text %>
     <dt>Preview</dt>
-    <dd><%= card_tag(@card) %></dd>
+    <dd><%= Cells::Card.render(@card) %></dd>
   </dl>
 </article>

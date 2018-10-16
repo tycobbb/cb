@@ -6,7 +6,8 @@ module Web
       ALERT  = :alert
     end
 
-    attr_reader :state, :messages
+    iattr :state
+    iattr :messages
 
     private def initialize(state, messages)
       @state = state

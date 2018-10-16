@@ -7,11 +7,13 @@ module StaticProxy
       method_defined?(name) || super
     end
 
-    def method_missing(name, *args, &block)
-      if method_defined?(name)
+    def method_missing(name, *args, **kwargs, &block)
+      if !method_defined?(name)
+        super
+      elsif kwargs.empty?
         new.send(name, *args, &block)
       else
-        super
+        new.send(name, *args, **kwargs, &block)
       end
     end
   end

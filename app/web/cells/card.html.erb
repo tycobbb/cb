@@ -1,5 +1,5 @@
 <article class="Card">
-  <%= card_image_tag(card) %>
+  <%= Cells::Card::Image.render(card) %>
   <div class="Card-content">
     <% if is_link %>
       <%= link_to(card.name, game_card_path(card.game, card), class: "Card-name") %>

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 module Web
   class Controller < ActionController::Base
-    ROOT_NAME = "root"
-
     # helpers
     helper Web::Helper
 
