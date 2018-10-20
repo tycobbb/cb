@@ -2,6 +2,6 @@
   <h1>New Card</h1>
 </header>
 <article class="NewCard">
-  <%= card_form_tag(@card) %>
+  <%= Cells::Card::Form.new(@card).render(self) %>
   <%= javascript_pack_tag("cards") %>
 </article>

@@ -1,0 +1,10 @@
+<%= form_for(card) do |f| %>
+  <%= f.field(:name) do |klass| %>
+    <%= f.text_field(:name, class: klass) %>
+  <% end %>
+  <%= f.field(:text) do |klass| %>
+    <%= f.text_field(:text, class: klass) %>
+  <% end %>
+  <%= f.image_field(:image, card.image) %>
+  <%= f.submit %>
+<% end %>

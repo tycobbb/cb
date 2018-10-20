@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module Cells
   class Card
-    class Image < ::Web::CellS
+    class Image < ::Web::Cell
       def initialize(card)
         @card = card
         super()
